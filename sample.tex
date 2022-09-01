@@ -1,0 +1,335 @@
+%%%%%%%%%%%%%%%%%
+% This is an sample CV template created using altacv.cls
+% (v1.3, 10 May 2020) written by LianTze Lim (liantze@gmail.com). Now compiles with pdfLaTeX, XeLaTeX and LuaLaTeX.
+%
+%% It may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either version 1.3
+%% of this license or (at your option) any later version.
+%% The latest version of this license is in
+%%    http://www.latex-project.org/lppl.txt
+%% and version 1.3 or later is part of all distributions of LaTeX
+%% version 2003/12/01 or later.
+%%%%%%%%%%%%%%%%
+
+%% If you are using \orcid or academicons
+%% icons, make sure you have the academicons
+%% option here, and compile with XeLaTeX
+%% or LuaLaTeX.
+% \documentclass[10pt,a4paper,academicons]{altacv}
+
+%% Use the "normalphoto" option if you want a normal photo instead of cropped to a circle
+% \documentclass[10pt,a4paper,normalphoto]{altacv}
+
+\documentclass[10pt,a4paper,ragged2e,withhyper]{altacv}
+%% AltaCV uses the fontawesome5 and academicons fonts
+%% and packages.
+%% See http://texdoc.net/pkg/fontawesome5 and http://texdoc.net/pkg/academicons for full list of symbols. You MUST compile with XeLaTeX or LuaLaTeX if you want to use academicons.
+
+% Change the page layout if you need to
+\geometry{left=1.25cm,right=1.25cm,top=1.5cm,bottom=1.5cm,columnsep=1.2cm}
+
+% The paracol package lets you typeset columns of text in parallel
+\usepackage{paracol}
+\usepackage{hyperref}
+% Change the font if you want to, depending on whether
+% you're using pdflatex or xelatex/lualatex
+\ifxetexorluatex
+  % If using xelatex or lualatex:
+  \setmainfont{Roboto Slab}
+  \setsansfont{Lato}
+  \renewcommand{\familydefault}{\sfdefault}
+\else
+  % If using pdflatex:
+  \usepackage[rm]{roboto}
+  \usepackage[defaultsans]{lato}
+  % \usepackage{sourcesanspro}
+  \renewcommand{\familydefault}{\sfdefault}
+\fi
+
+% Change the colours if you want to
+
+\definecolor{DarkPastelRed}{HTML}{450808}
+\definecolor{PastelRed}{HTML}{8F0D0D}
+\definecolor{GoldenEarth}{HTML}{E7D192}
+\definecolor{bronze}{rgb}{0.8, 0.5, 0.2}
+\definecolor{burgundy}{rgb}{0.45, 0.15, 0.15}
+
+\definecolor{gray}{rgb}{0.25, 0.25, 0.25}
+\definecolor{darkgray}{rgb}{0.152, 0.125, 0.125}
+\definecolor{megadarkgray}{rgb}{0.1, 0.1, 0.1}
+
+\colorlet{name}{megadarkgray}
+\colorlet{tagline}{PastelRed}
+\colorlet{heading}{burgundy}
+\colorlet{headingrule}{bronze}
+\colorlet{subheading}{PastelRed}
+\colorlet{accent}{PastelRed}
+\colorlet{emphasis}{darkgray}
+\colorlet{body}{gray}
+
+% Change some fonts, if necessary
+\renewcommand{\namefont}{\huge\rmfamily\bfseries}
+\renewcommand{\personalinfofont}{\footnotesize}
+\renewcommand{\cvsectionfont}{\Large\rmfamily\bfseries}
+\renewcommand{\cvsubsectionfont}{\large\bfseries}
+
+
+% Change the bullets for itemize and rating marker
+% for \cvskill if you want to
+\renewcommand{\itemmarker}{{\normalsize\textbullet}}
+\renewcommand{\ratingmarker}{\faCircle}
+
+%% sample.bib contains your publications
+\addbibresource{sample.bib}
+
+\begin{document}
+\name{Júlio Miguel Braz da Costa Silva}
+\tagline{M.Sc Electronics and Telecommunications Engineering}
+%% You can add multiple photos on the left or right
+\photoR{3.5cm}{foto_perfil.jpg}
+% \photoL{2.5cm}{Yacht_High,Suitcase_High}
+
+\personalinfo{%
+  % Not all of these are required!
+ 
+  
+  \medskip
+
+  \phone{(+351) 924 002 628}
+
+  \smallskip
+
+  \email{julio.m.b.c.silva@gmail.com}
+  \linkedin{julio-miguel-silva}
+
+  \smallskip
+
+  \location{Aveiro, Portugal}
+  
+  %% You MUST add the academicons option to \documentclass, then compile with LuaLaTeX or XeLaTeX, if you want to use \orcid or other academicons commands.
+  % \orcid{0000-0000-0000-0000}
+  %% You can add your own arbtrary detail with
+  %% \printinfo{symbol}{detail}[optional hyperlink prefix]
+  % \printinfo{\faPaw}{Hey ho!}[https://example.com/]
+  %% Or you can declare your own field with
+  %% \NewInfoFiled{fieldname}{symbol}[optional hyperlink prefix] and use it:
+  % \NewInfoField{gitlab}{\faGitlab}[https://gitlab.com/]
+  % \gitlab{your_id}
+}
+
+\makecvheader
+%% Depending on your tastes, you may want to make fonts of itemize environments slightly smaller
+% \AtBeginEnvironment{itemize}{\small}
+
+%% Set the left/right column width ratio to 6:4.
+\columnratio{0.62}
+
+% Start a 2-column paracol. Both the left and right columns will automatically
+% break across pages if things get too long.
+
+\begin{paracol}{2}
+  \cvsection{Work Experience}
+  
+  \cvevent{R\&D Engineer - Data Analysis - (Full/Hybrid) Remote}{Wavecom}{Jan 2021 – Present Time}{Aveiro, Portugal}
+
+  \begin{itemize}
+  \item[] \underline {\textbf{BigHPC}} \url{ https://bighpc.wavecom.pt/}
+  \smallskip
+  \begin{itemize}
+      \item Research and Development of a monitoring solution for High Performance Computers. (Full pipeline of collecting metrics, data processing, data clean,data storage, data retention and data visualization)
+      \item Moderator of the  Webinar "Is HPC ready for “Big” Data Storage?"
+      \item Work with partners from different different nationalities.
+  
+    \end{itemize}
+
+  \item[] \underline {\textbf{Public Network Monitoring}}
+    \smallskip
+      \begin{itemize}
+      \item Research and Development of an architecture capable of monitoring networks.
+      \item Creation of dashboarding visualizations for clients that required both the status and the history of their network. 
+      \end{itemize}
+    
+\end{itemize}
+
+
+  \cvsection{Education}
+
+  \cvevent{Master Degree in Electronics and Telecommunications Engineering}{University of Aveiro}{2014 – 2020}{Aveiro, Portugal}
+  \divider
+
+\cvevent{Master Thesis -  19/20.}{University of Aveiro}{2019-2020 (1 year)}{Aveiro - Portugal} 
+\begin{itemize}
+
+\item[] \underline {\textbf{Recovery and Identification of Moments in Images}}
+\item[] 
+  \begin{itemize}
+    \item Development of a python automatic image retrieval system capable of associating images to moments described in text.
+ 
+    
+  \end{itemize}
+
+\end{itemize}
+
+\divider
+
+\cvevent{Computer Vision Project}{University of Aveiro}{2019 (3 months)}{Aveiro - Portugal}
+
+\begin{itemize}
+  \item[] \underline {\textbf{Automatic License Plate Detector}}
+  \item[] 
+    \begin{itemize}
+      \item Development of a prototype system capable of validating pictures of license plates in real time.
+      
+    \end{itemize}
+  \end{itemize}
+
+
+
+
+% \cvsection{A Day of My Life}
+
+% % Adapted from @Jake's answer from http://tex.stackexchange.com/a/82729/226
+% % \wheelchart{outer radius}{inner radius}{
+% % comma-separated list of value/text width/color/detail}
+% \wheelchart{1.5cm}{0.5cm}{%
+%   6/8em/accent!30/{Sleep,\\beautiful sleep},
+%   3/8em/accent!40/Hopeful novelist by night,
+%   8/8em/accent!60/Daytime job,
+%   2/10em/accent/Sports and relaxation,
+%   5/6em/accent!20/Spending time with family
+% }
+
+% use ONLY \newpage if you want to force a page break for
+% ONLY the current column
+
+
+\cvsection{Publications}
+
+\nocite{*}
+
+\renewbibmacro{in:}{}
+
+\printbibliography[heading=pubtype,title={\printinfo{\faFile*[regular]}{Article}},type=article]
+
+
+% \cvsection{Languages}
+
+% \cvskill{Portuguese (Native)}{5}
+% \divider
+
+% \cvskill{English (C1)}{4}
+% \divider
+
+
+%% Switch to the right column. This will now automatically move to the second
+%% page if the content is too long.
+\switchcolumn
+
+
+
+
+\cvsection{Tech Skills}
+\cvtag{Python}
+\cvtag{Docker Compose}
+\cvtag{PromQL}
+\cvtag{SQL}
+\cvtag{TimescaleDB}  
+\cvtag{Docker}
+\cvtag{Linux}
+\cvtag{Elasticsearch}
+\cvtag{Kibana}
+\cvtag{Grafana}
+\cvtag{Postgres}
+\cvtag{Prometheus}
+\cvtag{Promscale}
+\cvtag{TimescaleDB}
+\cvtag{Fluentbit}
+\cvtag{HPC}
+\cvtag{JSON}
+\cvtag{MATLAB}
+\cvtag{Singularity}
+\cvtag{Gitlab}
+\cvtag{bash}
+\cvtag{vmagent}
+\cvtag{vmalert}
+\cvtag{victoriametrics}
+
+
+\cvsection{Python libraries}
+\cvtag{Seaborn}
+\cvtag{Pandas}
+\cvtag{PandasSQL}
+\cvtag{NumPy}
+\cvtag{Psutil}
+\cvtag{TensorFlow}
+\cvtag{Keras}
+\cvtag{ImageAI}
+\cvtag{Matplotlib}
+\cvtag{OpenCV}
+\cvtag{SpaCy}
+\cvtag{SQLalchemy}
+
+
+
+
+\cvsection{Knowledge / Interests}{}{}{}
+\cvtag{Metrics Extraction/Processing}
+\cvtag{Databases}
+\cvtag{Pattern Detection}
+\cvtag{Data Science}\\
+\cvtag{Automatization of tasks}
+\cvtag{Data Visualization}
+\cvtag{Data Processing}
+\cvtag{Computer Vision}
+
+\cvtag{Scene Recognition}
+\cvtag{Image Processing}\\
+\cvtag{Image Classification}
+\cvtag{Deep Learning}\\
+\cvtag{Neural Networks}
+\cvtag{Feature Extraction}
+\cvtag{Natural Language Processing}\\
+\cvtag{Machine Learning}
+\cvtag{Object Detection}\\
+
+
+
+
+
+
+\cvsection{Strengths}
+\cvtag{Self-Taught}
+\cvtag{Communication}\\
+\cvtag{Analytical Thinking}
+\cvtag{Research}
+\cvtag{Teamwork}\\
+\cvtag{Attention to detail}
+\cvtag{Hard-Working}\\
+\cvtag{Eager to learn}
+\cvtag{Innovative Thinking}
+\cvtag{Easy to work with}
+\cvtag{Patience}
+
+\cvsection{Languages}
+
+\cvtag{Portuguese (Native)}
+\cvtag{English (Fluent)}
+
+
+\cvsection{Driver Licence}
+
+\cvtag{B1}
+\cvtag{B}
+
+
+
+
+
+%% Yeah I didn't spend too much time making all the
+%% spacing consistent... sorry. Use \smallskip, \medskip,
+%% \bigskip, \vpsace etc to make ajustments.
+
+\end{paracol}
+
+
+\end{document}
