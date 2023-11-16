@@ -104,7 +104,7 @@
 
   \smallskip
 
-  \location{Aveiro, Portugal}
+  \location{Tondela, Portugal}}
   
   %% You MUST add the academicons option to \documentclass, then compile with LuaLaTeX or XeLaTeX, if you want to use \orcid or other academicons commands.
   % \orcid{0000-0000-0000-0000}
@@ -114,8 +114,7 @@
   %% Or you can declare your own field with
   %% \NewInfoFiled{fieldname}{symbol}[optional hyperlink prefix] and use it:
   % \NewInfoField{gitlab}{\faGitlab}[https://gitlab.com/]
-  % \gitlab{your_id}
-}
+  % \gitlab{your_id}}
 
 \makecvheader
 %% Depending on your tastes, you may want to make fonts of itemize environments slightly smaller
@@ -128,60 +127,59 @@
 % break across pages if things get too long.
 
 \begin{paracol}{2}
-  \cvsection{Work Experience}
-  
-  \cvevent{R\&D Engineer - Data Analysis - (Full/Hybrid) Remote}{Wavecom}{Jan 2021 – Present Time}{Aveiro, Portugal}
-
-  \begin{itemize}
-  \item[] \underline {\textbf{BigHPC}} \url{ https://bighpc.wavecom.pt/}
-  \smallskip
-  \begin{itemize}
-      \item Research and Development of a monitoring solution for High Performance Computers. (Full pipeline of collecting metrics, data processing, data clean,data storage, data retention and data visualization)
-      \item Moderator of the  Webinar "Is HPC ready for “Big” Data Storage?"
-      \item Work with partners from different different nationalities.
-  
-    \end{itemize}
-
-  \item[] \underline {\textbf{Public Network Monitoring}}
-    \smallskip
-      \begin{itemize}
-      \item Research and Development of an architecture capable of monitoring networks.
-      \item Creation of dashboarding visualizations for clients that required both the status and the history of their network. 
-      \end{itemize}
-    
-\end{itemize}
-
-
   \cvsection{Education}
 
-  \cvevent{Master Degree in Electronics and Telecommunications Engineering}{University of Aveiro}{2014 – 2020}{Aveiro, Portugal}
-  \divider
+  \cvevent{Master in Electronics/Telecommunications Engineering}{University of Aveiro}{2014 – 2020}{Aveiro, Portugal}
 
-\cvevent{Master Thesis -  19/20.}{University of Aveiro}{2019-2020 (1 year)}{Aveiro - Portugal} 
+
+\cvevent{Thesis - Recovery and Identification of Moments}{Grade: 19/20}{2019-2020 (1 year)}{Aveiro - Portugal} 
 \begin{itemize}
 
-\item[] \underline {\textbf{Recovery and Identification of Moments in Images}}
+
 \item[] 
   \begin{itemize}
     \item Development of a python automatic image retrieval system capable of associating images to moments described in text.
- 
-    
+
+
   \end{itemize}
 
 \end{itemize}
 
-\divider
+  \cvsection{Work Experience}
+  
+  \cvevent{R\&D Engineer (Hybrid)}{Wavecom}{Jan 2021 – Present Time}{Aveiro, Portugal}
 
-\cvevent{Computer Vision Project}{University of Aveiro}{2019 (3 months)}{Aveiro - Portugal}
+  \begin{itemize}
+    \item Decision-making in diverse projects from inception to production.
+    \item Designed and implemented \textbf{ETL pipelines}.
+    \item  Developed microservices both in \textbf{python} and \textbf{golang}.
+    \item Developed scripts and automated processes using both  \textbf{python} and \textbf{Shell} for efficient workflow management.
+    \item Created \textbf{APIs} for \textbf{SQL} and \textbf{NoSQL} databases.
+    \item Engineered algorithms for advanced data analytics.
+    \item Managed databases such as \textbf{PostgreSQL, Victoriametrics, and Elasticsearch}.
+    \item Implemented \textbf{Protocol Buffers and gRPC} for efficient microservices communication.
+    \item Developed \textbf{Docker} images, orchestrated applications with \textbf{Docker Compose}.
+    \item Employed \textbf{Telegraf} to optimize the efficiency of data collection, processing and seamless transfer to databases.
+    \item Utilized Version Control Systems for code integrity.
+    \item Designed comprehensive \textbf{Grafana} dashboards for effective data visualization.
+    \item Applied \textbf{Computer Vision} algorithms in research and development. 
+    \item Experience with \textbf{HPC} systems (developed a monitoring framework with alarms).
+    \item Collaborated with partners globally.
+    \item Conducted client meetings, ensuring requirements fulfillment.
 
-\begin{itemize}
-  \item[] \underline {\textbf{Automatic License Plate Detector}}
-  \item[] 
-    \begin{itemize}
-      \item Development of a prototype system capable of validating pictures of license plates in real time.
-      
-    \end{itemize}
+    
+\end{itemize}
+
+\cvsection{Links}
+  \begin{itemize}
+    \item \textbf{BigHPC Project}: \url{https://bighpc.wavecom.pt/}
+    \item \textbf{BigHPC Speaker}: \url{https://www.youtube.com/watch?v=5gaiovo9DD0}
+    \item \textbf{Thesis Link}: \url{https://ria.ua.pt/handle/10773/30553}
+    \item \textbf{Thesis Paper }: \url{https://ceur-ws.org/Vol-2696/paper_91.pdf}
   \end{itemize}
+
+
+
 
 
 
@@ -203,13 +201,8 @@
 % ONLY the current column
 
 
-\cvsection{Publications}
 
-\nocite{*}
 
-\renewbibmacro{in:}{}
-
-\printbibliography[heading=pubtype,title={\printinfo{\faFile*[regular]}{Article}},type=article]
 
 
 % \cvsection{Languages}
@@ -229,68 +222,98 @@
 
 
 \cvsection{Tech Skills}
+
+\textbf{Programming Languages} \\
+\smallskip
 \cvtag{Python}
-\cvtag{Docker Compose}
-\cvtag{PromQL}
-\cvtag{SQL}
-\cvtag{TimescaleDB}  
-\cvtag{Docker}
-\cvtag{Linux}
+\cvtag{Golang}\\
+
+\medskip
+
+\textbf{Databases}\\
+\smallskip
+
+\cvtag{SQL/NoSQL}
+\cvtag{PostgreSQL}  
+\cvtag{TimescaleDB}
 \cvtag{Elasticsearch}
-\cvtag{Kibana}
-\cvtag{Grafana}
-\cvtag{Postgres}
+\cvtag{Victoriametrics}
 \cvtag{Prometheus}
 \cvtag{Promscale}
-\cvtag{TimescaleDB}
-\cvtag{Fluentbit}
-\cvtag{HPC}
+\cvtag{PromQL}
+\cvtag{pgAdmin}\\
+
+
+\medskip
+
+\textbf{Dashboarding}\\
+\smallskip
+\cvtag{Grafana}
+\cvtag{Kibana}\\
+
+
+\medskip
+
+
+\textbf{Containerization and Orchestration}\\
+\medskip
+\cvtag{Docker}
+\cvtag{Docker Compose}\\
+\medskip
+
+
+
+\textbf{Data serialization}\\
+\medskip
 \cvtag{JSON}
-\cvtag{MATLAB}
-\cvtag{Singularity}
-\cvtag{Gitlab}
-\cvtag{bash}
-\cvtag{vmagent}
-\cvtag{vmalert}
-\cvtag{victoriametrics}
+\cvtag{CSV}
+\cvtag{Protobuf}
+\cvtag{YAML}\\
+\medskip
 
 
-\cvsection{Python libraries}
-\cvtag{Seaborn}
+
+\textbf{Others}\\
+\medskip
+\cvtag{Git}
+\cvtag{Telegraf}
+\cvtag{Linux}
+\cvtag{Bash/Shell}
+\cvtag{gRPC}
+
+
+
+
+\cvsection{Python Experience}
+
+\textbf{Software Development and APIs}\\
+\medskip
+
+\cvtag{FastAPI}
+\cvtag{SQLAlchemy}
+\cvtag{Psycopg}
+\cvtag{Aiohttp}
+\cvtag{Pydantic}
+\cvtag{Asyncio}
+\cvtag{Requests}\\
+\medskip
+
+
+\textbf{Data Analytics}\\
+\medskip
 \cvtag{Pandas}
-\cvtag{PandasSQL}
-\cvtag{NumPy}
-\cvtag{Psutil}
-\cvtag{TensorFlow}
-\cvtag{Keras}
-\cvtag{ImageAI}
+\cvtag{Seaborn}
+\cvtag{Numpy}
 \cvtag{Matplotlib}
+\cvtag{Tensorflow}\\
+\medskip
+
+
+\textbf{Computer Vision}\\
+\medskip
+\cvtag{ImageAI}
 \cvtag{OpenCV}
-\cvtag{SpaCy}
-\cvtag{SQLalchemy}
-
-
-
-
-\cvsection{Knowledge / Interests}{}{}{}
-\cvtag{Metrics Extraction/Processing}
-\cvtag{Databases}
-\cvtag{Pattern Detection}
-\cvtag{Data Science}\\
-\cvtag{Automatization of tasks}
-\cvtag{Data Visualization}
-\cvtag{Data Processing}
-\cvtag{Computer Vision}
-
-\cvtag{Scene Recognition}
-\cvtag{Image Processing}\\
-\cvtag{Image Classification}
-\cvtag{Deep Learning}\\
-\cvtag{Neural Networks}
-\cvtag{Feature Extraction}
-\cvtag{Natural Language Processing}\\
-\cvtag{Machine Learning}
-\cvtag{Object Detection}\\
+\cvtag{Ultralytics}\\
 
 
 
@@ -298,30 +321,23 @@
 
 
 \cvsection{Strengths}
-\cvtag{Self-Taught}
-\cvtag{Communication}\\
-\cvtag{Analytical Thinking}
+
+\cvtag{Analytical and Critical Thinking}\\
+\cvtag{Problem-Solving Orientation}\\
+
+
+\cvtag{Teamwork and Collaboration}
 \cvtag{Research}
-\cvtag{Teamwork}\\
-\cvtag{Attention to detail}
-\cvtag{Hard-Working}\\
-\cvtag{Eager to learn}
-\cvtag{Innovative Thinking}
-\cvtag{Easy to work with}
-\cvtag{Patience}
+\cvtag{Eager to Learn and Adapt}
+\cvtag{Self-Taught}
+
+
+
 
 \cvsection{Languages}
 
 \cvtag{Portuguese (Native)}
 \cvtag{English (Fluent)}
-
-
-\cvsection{Driver Licence}
-
-\cvtag{B1}
-\cvtag{B}
-
-
 
 
 

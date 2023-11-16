@@ -1,0 +1,19 @@
+# Fdb version 4
+["pdflatex"] 1688380859 "/home/julio/PrivateProjects/CV/mmayer.tex" "mmayer.pdf" "mmayer" 1688380859 2
+  "/etc/texmf/web2c/texmf.cnf" 1688380673 475 c0e671620eb5563b2130f56340a5fde8 ""
+  "/home/julio/PrivateProjects/CV/mmayer.tex" 1688380164 9096 e38bb3091ca1c83e23590f1ed2b922d0 ""
+  "/usr/share/texlive/texmf-dist/tex/latex/base/article.cls" 1667332637 20144 d5ecf0a5140c8d8d8b72cbe86e320eff ""
+  "/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo" 1667332637 8448 c33a4e1cb35cee9b33c2b21033b73e39 ""
+  "/usr/share/texlive/texmf-dist/tex/latex/extsizes/extarticle.cls" 1137110130 20602 3112294ba237d94ce4a1502cfef3594f ""
+  "/usr/share/texlive/texmf-dist/web2c/texmf.cnf" 1676468108 39561 34c98e380bf7c7201ee6a7909aff625a ""
+  "/usr/share/texmf/web2c/texmf.cnf" 1676468108 39561 34c98e380bf7c7201ee6a7909aff625a ""
+  "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1688380693 6475486 5dd4cc4282f69ff4ed808260bc79e330 ""
+  "altacv.cls" 1688380164 13987 19ede5ff42bdc05cac0aaf32569755a4 ""
+  "mmayer.aux" 1688380859 32 3985256e7290058c681f74d7a3565a19 "pdflatex"
+  "mmayer.tex" 1688380164 9096 e38bb3091ca1c83e23590f1ed2b922d0 ""
+  "pdfx.sty" 0 -1 0 ""
+  (generated)
+  "mmayer.aux"
+  "mmayer.log"
+  "mmayer.pdf"
+  (rewritten before read)
