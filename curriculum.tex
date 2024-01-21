@@ -34,16 +34,16 @@
 % Change the font if you want to, depending on whether
 % you're using pdflatex or xelatex/lualatex
 \ifxetexorluatex
-  % If using xelatex or lualatex:
-  \setmainfont{Roboto Slab}
-  \setsansfont{Lato}
-  \renewcommand{\familydefault}{\sfdefault}
+      % If using xelatex or lualatex:
+      \setmainfont{Roboto Slab}
+      \setsansfont{Lato}
+      \renewcommand{\familydefault}{\sfdefault}
 \else
-  % If using pdflatex:
-  \usepackage[rm]{roboto}
-  \usepackage[defaultsans]{lato}
-  % \usepackage{sourcesanspro}
-  \renewcommand{\familydefault}{\sfdefault}
+      % If using pdflatex:
+      \usepackage[rm]{roboto}
+      \usepackage[defaultsans]{lato}
+      % \usepackage{sourcesanspro}
+      \renewcommand{\familydefault}{\sfdefault}
 \fi
 
 % Change the colours if you want to
@@ -73,7 +73,6 @@
 \renewcommand{\cvsectionfont}{\Large\rmfamily\bfseries}
 \renewcommand{\cvsubsectionfont}{\large\bfseries}
 
-
 % Change the bullets for itemize and rating marker
 % for \cvskill if you want to
 \renewcommand{\itemmarker}{{\normalsize\textbullet}}
@@ -89,205 +88,178 @@
 \photoR{3.5cm}{profile.jpg}
 % \photoL{2.5cm}{Yacht_High,Suitcase_High}
 
+%% ----------------------------------------- HEADER WITH LINKS
 \personalinfo{%
-  \hfill \break
-  \email{julio.m.b.c.silva@gmail.com}
-  \hfill \break
-  \location{Portugal}
-  \hfill \break
-  \linkedin{julio-miguel-silva}
-  \hfill \break
-  \github{jmbcs}
-  \hfill \break
+      \medskip \newline
+      \email{julio.m.b.c.silva@gmail.com}
+      \medskip \newline
+      \location{Portugal}
+      \medskip \newline
+      \linkedin{julio-miguel-silva}
+      \medskip \newline
+      \github{jmbcs}
+      \
 
- 
 }
 
 \makecvheader
 %% Depending on your tastes, you may want to make fonts of itemize environments slightly smaller
-% \AtBeginEnvironment{itemize}{\small}
+\AtBeginEnvironment{itemize}{\small}
 
 %% Set the left/right column width ratio to 6:4.
-\columnratio{0.62}
+\columnratio{0.57}
 
 % Start a 2-column paracol. Both the left and right columns will automatically
 % break across pages if things get too long.
-
 \begin{paracol}{2}
-  \cvsection{Portfolio Link}
 
-  \url{https://portfolio-julio-silva.streamlit.app/}
+      %% ----------------------------------------- PORTFOLIO
 
+      \cvsection{Portfolio Link}
+      \url{https://portfolio-julio-silva.streamlit.app/}
 
+      %% ----------------------------------------- EDUCATION
+      \cvsection{Education}
 
+      \cvevent{Master in Electronics/Telecommunications Engineering}{University of Aveiro}{2014 – 2020}{Aveiro, Portugal}
 
+      \cvevent{Thesis - Recovery and Identification of Moments}{Grade: 19/20}{2019-2020 (1 year)}{Aveiro - Portugal}
+      \begin{itemize}
+            \item[]
+                  \begin{itemize}
+                        \item Development of a python automatic image retrieval system capable of associating
+                              images to moments described in text.
+                  \end{itemize}
+      \end{itemize}
 
-  \cvsection{Education}
+      %% ----------------------------------------- WORK EXPERIENCE
+      \cvsection{Work Experience}
 
-  \cvevent{Master in Electronics/Telecommunications Engineering}{University of Aveiro}{2014 – 2020}{Aveiro, Portugal}
+      \cvevent{Research and Development Engineer (Hybrid)}{Wavecom}{Jan 2021 – Present Time}{Aveiro, Portugal}
 
+      \begin{itemize}
+            \item Led decision-making across diverse \textcolor{heading}{\textbf{funded
+                              projects}} from inception to production.
+            \item Designed and implemented \textcolor{heading}{\textbf{ETL pipelines}} with
+                  \textcolor{heading}{\textbf{Telegraf}}.
+            \item Developed microservices in \textcolor{heading}{\textbf{Python}} and
+                  \textcolor{heading}{\textbf{Golang}}.
+            \item Automated workflows using \textcolor{heading}{\textbf{Python}} and
+                  \textcolor{heading}{\textbf{Shell}} scripting.
+            \item Built \textcolor{heading}{\textbf{APIs}} for \textcolor{heading}{\textbf{SQL}}
+                  and \textcolor{heading}{\textbf{NoSQL}} databases.
+            \item Engineered algorithms for \textcolor{heading}{\textbf{data analytics}}.
+            \item Managed databases, including \textcolor{heading}{\textbf{PostgreSQL}},
+                  \textcolor{heading}{\textbf{Victoriametrics}}, and
+                  \textcolor{heading}{\textbf{Elasticsearch}}.
+            \item Implemented \textcolor{heading}{\textbf{Protocol Buffers}} and
+                  \textcolor{heading}{\textbf{gRPC}} for microservices communication.
+            \item Developed \textcolor{heading}{\textbf{Docker}} images and orchestrated
+                  applications using \textcolor{heading}{\textbf{Docker Compose}}.
 
-\cvevent{Thesis - Recovery and Identification of Moments}{Grade: 19/20}{2019-2020 (1 year)}{Aveiro - Portugal} 
-\begin{itemize}
+            \item Implemented \textcolor{heading}{\textbf{Version Control Systems}} to ensure
+                  code integrity.
 
+            \item Developed a monitoring framework for \textcolor{heading}{\textbf{HPC}} systems
+                  with comprehensive \textcolor{heading}{\textbf{Grafana}} dashboards.
+            \item Collaborated with global partners.
 
-\item[] 
-  \begin{itemize}
-    \item Development of a python automatic image retrieval system capable of associating images to moments described in text.
+      \end{itemize}
 
+      %% ----------------------------------------- LANGUAGES
+      \cvsection{Languages}
+      \cvtag{Portuguese (Native)}
+      \cvtag{English (Fluent)}
 
-  \end{itemize}
+      \switchcolumn
 
-\end{itemize}
+      %% ----------------------------------------- TECH SKILLS
+      \cvsection{Tech Skills}
 
-  \cvsection{Work Experience}
-  
-  \cvevent{Research and Development Engineer (Hybrid)}{Wavecom}{Jan 2021 – Present Time}{Aveiro, Portugal}
+      \textbf{Programming Languages} \\
+      \smallskip
+      \cvtag{Python}
+      \cvtag{Golang}\\
+      \medskip
 
-  \begin{itemize}
-    \item Decision-making in diverse projects from inception to production.
-    \item Designed and implemented \textbf{ETL pipelines}.
-    \item  Developed microservices both in \textbf{python} and \textbf{golang}.
-    \item Developed scripts and automated processes using both  \textbf{python} and \textbf{Shell} for efficient workflow management.
-    \item Created \textbf{APIs} for \textbf{SQL} and \textbf{NoSQL} databases.
-    \item Engineered algorithms for advanced data analytics.
-    \item Managed databases such as \textbf{PostgreSQL, Victoriametrics, and Elasticsearch}.
-    \item Implemented \textbf{Protocol Buffers and gRPC} for efficient microservices communication.
-    \item Developed \textbf{Docker} images, orchestrated applications with \textbf{Docker Compose}.
-    \item Employed \textbf{Telegraf} to optimize the efficiency of data collection, processing and seamless transfer to databases.
-    \item Utilized Version Control Systems for code integrity.
-    \item Designed comprehensive \textbf{Grafana} dashboards for effective data visualization.
-    \item Applied \textbf{Computer Vision} algorithms in research and development. 
-    \item Experience with \textbf{HPC} systems (developed a monitoring framework with alarms).
-    \item Collaborated with partners globally.
-    \item Conducted client meetings, ensuring requirements fulfillment.
+      \textbf{Databases}\\
+      \smallskip
+      \cvtag{SQL/NoSQL}
+      \cvtag{PostgreSQL}
+      \cvtag{TimescaleDB}
+      \cvtag{Elasticsearch}
+      \cvtag{Victoriametrics}
+      \cvtag{Prometheus}
+      \cvtag{Promscale}
+      \cvtag{PromQL}
+      \cvtag{pgAdmin}\\
+      \medskip
 
-    
-\end{itemize}
+      \textbf{Dashboarding}\\
+      \smallskip
+      \cvtag{Grafana}
+      \cvtag{Kibana}\\
+      \medskip
 
+      \textbf{Containerization and Orchestration}\\
+      \medskip
+      \cvtag{Docker}
+      \cvtag{Docker Compose}\\
+      \medskip
 
+      \textbf{Data serialization}\\
+      \medskip
+      \cvtag{JSON}
+      \cvtag{CSV}
+      \cvtag{Protobuf}
+      \cvtag{YAML}\\
+      \medskip
 
+      \textbf{Others}\\
+      \medskip
+      \cvtag{Git}
+      \cvtag{Telegraf}
+      \cvtag{Linux}
+      \cvtag{Bash/Shell}
+      \cvtag{gRPC}
 
-\switchcolumn
+      %% ----------------------------------------- Python Experience
+      \cvsection{Python Experience}
+      \textbf{Software Development and APIs}\\
+      \medskip
 
+      \cvtag{FastAPI}
+      \cvtag{SQLAlchemy}
+      \cvtag{Psycopg}
+      \cvtag{Aiohttp}
+      \cvtag{Pydantic}
+      \cvtag{Asyncio}
+      \cvtag{Requests}\\
+      \medskip
 
+      \textbf{Data Analytics}\\HPC
+      \medskip
+      \cvtag{Pandas}
+      \cvtag{Seaborn}
+      \cvtag{Numpy}
+      \cvtag{Matplotlib}
+      \cvtag{Tensorflow}\\
+      \medskip
 
+      \textbf{Computer Vision}\\
+      \medskip
+      \cvtag{ImageAI}
+      \cvtag{OpenCV}
+      \cvtag{Ultralytics}\\
 
-\cvsection{Tech Skills}
-
-\textbf{Programming Languages} \\
-\smallskip
-\cvtag{Python}
-\cvtag{Golang}\\
-
-\medskip
-
-\textbf{Databases}\\
-\smallskip
-
-\cvtag{SQL/NoSQL}
-\cvtag{PostgreSQL}  
-\cvtag{TimescaleDB}
-\cvtag{Elasticsearch}
-\cvtag{Victoriametrics}
-\cvtag{Prometheus}
-\cvtag{Promscale}
-\cvtag{PromQL}
-\cvtag{pgAdmin}\\
-
-
-\medskip
-
-\textbf{Dashboarding}\\
-\smallskip
-\cvtag{Grafana}
-\cvtag{Kibana}\\
-
-
-\medskip
-
-
-\textbf{Containerization and Orchestration}\\
-\medskip
-\cvtag{Docker}
-\cvtag{Docker Compose}\\
-\medskip
-
-
-
-\textbf{Data serialization}\\
-\medskip
-\cvtag{JSON}
-\cvtag{CSV}
-\cvtag{Protobuf}
-\cvtag{YAML}\\
-\medskip
-
-
-
-\textbf{Others}\\
-\medskip
-\cvtag{Git}
-\cvtag{Telegraf}
-\cvtag{Linux}
-\cvtag{Bash/Shell}
-\cvtag{gRPC}
-
-
-
-
-\cvsection{Python Experience}
-
-\textbf{Software Development and APIs}\\
-\medskip
-
-\cvtag{FastAPI}
-\cvtag{SQLAlchemy}
-\cvtag{Psycopg}
-\cvtag{Aiohttp}
-\cvtag{Pydantic}
-\cvtag{Asyncio}
-\cvtag{Requests}\\
-\medskip
-
-
-\textbf{Data Analytics}\\
-\medskip
-\cvtag{Pandas}
-\cvtag{Seaborn}
-\cvtag{Numpy}
-\cvtag{Matplotlib}
-\cvtag{Tensorflow}\\
-\medskip
-
-
-\textbf{Computer Vision}\\
-\medskip
-\cvtag{ImageAI}
-\cvtag{OpenCV}
-\cvtag{Ultralytics}\\
-
-
-
-\begin{paracol}{2}
-  \cvsection{Relevant Links}
-
-
-  \begin{itemize}
-    
-    \item \textbf{BigHPC Project}: \url{https://bighpc.wavecom.pt/}
-    \item \textbf{BigHPC Speaker}: \url{https://www.youtube.com/watch?v=5gaiovo9DD0}
-    \item \textbf{Thesis Link}: \url{https://ria.ua.pt/handle/10773/30553}
-    \item \textbf{Thesis Paper }: \url{https://ceur-ws.org/Vol-2696/paper_91.pdf}
-  \end{itemize}
-
-\cvsection{Languages}
-
-\cvtag{Portuguese (Native)}
-\cvtag{English (Fluent)}
-
+      %% ----------------------------------------- RELEVANT LINKS
+      \cvsection{Relevant Links}
+      \begin{itemize}
+            \item \textbf{BigHPC Project}: \url{https://bighpc.wavecom.pt/}
+            \item \textbf{BigHPC Speaker}: \url{https://www.youtube.com/watch?v=5gaiovo9DD0}
+            \item \textbf{Thesis Link}: \url{https://ria.ua.pt/handle/10773/30553}
+            \item \textbf{Thesis Paper }: \url{https://ceur-ws.org/Vol-2696/paper_91.pdf}
+      \end{itemize}
 
 \end{paracol}
-
-
 \end{document}
