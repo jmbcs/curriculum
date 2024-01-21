@@ -1,14 +1,14 @@
 # Fdb version 4
-["biber sample"] 0 "sample.bcf" "sample.bbl" "sample" 1700069540 -1
+["biber sample"] 0 "sample.bcf" "sample.bbl" "sample" 1705855289 -1
   "./sample.bib" 1688380164 180 be16a835f01ceb10e72d56ef2e8ce8eb ""
-  "sample.bcf" 1700069540 107341 959387d99ef0f38948e98428c3ec9382 "pdflatex"
+  "sample.bcf" 1705855289 107341 959387d99ef0f38948e98428c3ec9382 "pdflatex"
   (generated)
   "sample.bbl"
   "sample.blg"
   (rewritten before read)
-["pdflatex"] 1700069538 "/home/julio/PrivateProjects/CV/sample.tex" "sample.pdf" "sample" 1700069540 0
+["pdflatex"] 1705855287 "/home/julio/PrivateProjects/CV/sample.tex" "sample.pdf" "sample" 1705855289 0
   "/etc/texmf/web2c/texmf.cnf" 1688380673 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/julio/PrivateProjects/CV/sample.tex" 1700069538 9174 0ec399fd1130215eacd6bf40d1fa93c1 ""
+  "/home/julio/PrivateProjects/CV/sample.tex" 1700782024 9174 0ec399fd1130215eacd6bf40d1fa93c1 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/fontawesome5/fa5brands0.enc" 1622837620 2920 d63721872b8c77041b88e51b8f7c291d ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/fontawesome5/fa5free0.enc" 1622837620 3083 a707712f77b073b3833e4b1334a30e99 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/fontawesome5/fa5free2.enc" 1622837620 2906 e48aa7c95dea478a2e011bcb4f7878c9 ""
@@ -240,12 +240,12 @@
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1698924194 7906059 2de44b4e937601a04a45897816015077 ""
   "altacv.cls" 1688380164 13987 19ede5ff42bdc05cac0aaf32569755a4 ""
   "foto_perfil.jpg" 1688380164 67885 109f1ae1ebee77971bda86c519557584 ""
-  "pdfa.xmpi" 1700069539 5042 a08a9481c02adf741499e27fe30fdd64 "pdflatex"
-  "sample.aux" 1700069540 664 e9ac8ccf202bfd84cccce9e147bcbf91 "pdflatex"
+  "pdfa.xmpi" 1705855287 5042 c9244e41fbea29df6fd43a234118114f "pdflatex"
+  "sample.aux" 1705855289 664 e9ac8ccf202bfd84cccce9e147bcbf91 "pdflatex"
   "sample.bbl" 1700068059 466 ee04f40f768daeed26442158e95aba61 "biber sample"
-  "sample.out" 1700069539 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "sample.run.xml" 1700069540 2321 5a73deab90b361c563915892c6fa37bd "pdflatex"
-  "sample.tex" 1700069538 9174 0ec399fd1130215eacd6bf40d1fa93c1 ""
+  "sample.out" 1705855288 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "sample.run.xml" 1705855289 2321 5a73deab90b361c563915892c6fa37bd "pdflatex"
+  "sample.tex" 1700782024 9174 0ec399fd1130215eacd6bf40d1fa93c1 ""
   (generated)
   "pdfa.xmpi"
   "sample.aux"
