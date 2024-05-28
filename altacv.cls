@@ -80,35 +80,35 @@
 %% v1.1: Optionally load academicons
 %% v1.1.5: Handle different versions of academicons
 \if@academicons
-  \ifxetexorluatex
-    \RequirePackage{fontspec}
-    %% academicons in TL2018 doesn't require
-    %% Academicons to be installed in OS fonts
-    %% so can be loaded directly
-    \@ifl@t@r\fmtversion{2018/04/01}{%
-      \RequirePackage{academicons}
+\ifxetexorluatex
+\RequirePackage{fontspec}
+%% academicons in TL2018 doesn't require
+%% Academicons to be installed in OS fonts
+%% so can be loaded directly
+\@ifl@t@r\fmtversion{2018/04/01}{%
+  \RequirePackage{academicons}
+  }{%
+  % TL2017
+  \@ifl@t@r\fmtversion{2017/04/01}{%
+    \@ifpackagelater{academicons}{2018/03/01}{%
+    \RequirePackage{academicons}
     }{%
-      % TL2017
-      \@ifl@t@r\fmtversion{2017/04/01}{%
-        \@ifpackagelater{academicons}{2018/03/01}{%
-          \RequirePackage{academicons}
-        }{%
-          \let\ori@newfontfamily\newfontfamily%
-          \renewcommand{\newfontfamily}[2]{}
-          \RequirePackage{academicons}
-          \let\newfontfamily\ori@newfontfamily
-          \newfontfamily{\AI}{academicons.ttf}
-        }
-      }{% TL2016 requires the package to be loaded before
-        % the version can be checked. Only added because
-        % Overleaf v1 still runs TL2016; will be removed
-        % when v1 is completely retired.
-          \let\ori@newfontfamily\newfontfamily%
-          \renewcommand{\newfontfamily}[2]{}
-          \RequirePackage{academicons}
-          \let\newfontfamily\ori@newfontfamily
-          \newfontfamily{\AI}{academicons.ttf}
-      }
+    \let\ori@newfontfamily\newfontfamily%
+    \renewcommand{\newfontfamily}[2]{}
+    \RequirePackage{academicons}
+    \let\newfontfamily\ori@newfontfamily
+    \newfontfamily{\AI}{academicons.ttf}
+    }
+    }{% TL2016 requires the package to be loaded before
+    % the version can be checked. Only added because
+    % Overleaf v1 still runs TL2016; will be removed
+    % when v1 is completely retired.
+    \let\ori@newfontfamily\newfontfamily%
+    \renewcommand{\newfontfamily}[2]{}
+    \RequirePackage{academicons}
+    \let\newfontfamily\ori@newfontfamily
+    \newfontfamily{\AI}{academicons.ttf}
+    }
     }
   \else
     \ClassError{AltaCV}{academicons unsupported by latex or pdflatex. Please compile with xelatex or lualatex}{Please compile with xelatex or lualatex to use the academicons option}
@@ -158,22 +158,22 @@
 
 \newenvironment{fullwidth}{%
   \begin{adjustwidth}{}{\dimexpr-\marginparwidth-\marginparsep\relax}}
-  {\end{adjustwidth}}
+    {\end{adjustwidth}}
 
 %% v1.3.1 \detokenize will break UTF-8 in pdflatex
 %% Using alternative from https://tex.stackexchange.com/a/530911/226
 \newcommand{\utffriendlydetokenize}[1]{%
 \scantokens{%
-  \catcode`\_=12%
+\catcode`\_=12%
 %   \catcode`\^=12%
 %   \catcode`\{=12%
 %   \catcode`\}=12%
-  \catcode`\&=12%
-  \catcode`\$=12%
-  \catcode`\#=12%
-  \catcode`\~=12%
+\catcode`\&=12%
+\catcode`\$=12%
+\catcode`\#=12%
+\catcode`\~=12%
 %   \catcode`\\=12%
-  {#1}%
+{#1}%
 }%
 }
 %% v1.3: Incorporating hyperlinks
@@ -184,13 +184,13 @@
   \IfNoValueTF{#3}{%
     \mbox{\textcolor{accent}{\normalfont #1}~\utffriendlydetokenize{#2}\hspace{2em}}%
   }{%
-     \if@withhyper%
+    \if@withhyper%
       \mbox{\textcolor{accent}{\normalfont #1}~
-      \href{#3}{\utffriendlydetokenize{#2}}\hspace{2em}}
-     \else%
-       \ClassWarning{Please specify [withhyper] option to enable hyperlinks. Printing out full hyperlink prefix #1 for now.}%
+        \href{#3}{\utffriendlydetokenize{#2}}\hspace{2em}}
+    \else%
+      \ClassWarning{Please specify [withhyper] option to enable hyperlinks. Printing out full hyperlink prefix #1 for now.}%
       \mbox{\textcolor{accent}{\normalfont #1}~{\utffriendlydetokenize{#3#2}}\hspace{2em}}%
-     \fi%
+    \fi%
   }%
 }%
 
@@ -201,8 +201,8 @@
   \csdef{#1}##1{%
     \if@withhyper
       \IfNoValueTF {#3}
-        {\printinfo{\csuse{#1 symbol}}{##1}}%
-        {\printinfo{\csuse{#1 symbol}}{##1}[\csuse{#1 hyperprefix}##1]}%
+      {\printinfo{\csuse{#1 symbol}}{##1}}%
+      {\printinfo{\csuse{#1 symbol}}{##1}[\csuse{#1 hyperprefix}##1]}%
     \else
       \printinfo{\csuse{#1 symbol}}{##1}%
     \fi%
@@ -272,26 +272,26 @@
 
 \newcommand{\makecvheader}{%
   \begingroup
-    \altacv@left@photos\hfill%
-    \begin{minipage}{\dimexpr\linewidth-\altacv@photos@width}%
+  \altacv@left@photos\hfill%
+  \begin{minipage}{\dimexpr\linewidth-\altacv@photos@width}%
     \raggedright%
     {\namefont\color{name}\MakeUppercase{\@name}\par}
     \medskip
     {\taglinefont\color{tagline}\@tagline\par}
     \medskip
     {\personalinfofont\@personalinfo\par}
-    \end{minipage}\hfill%
-    \altacv@right@photos\par%
+  \end{minipage}\hfill%
+  \altacv@right@photos\par%
   \endgroup\medskip
 }
 
 \renewenvironment{quote}{\color{accent}\itshape\large}{\par}
 
 \newcommand{\cvsection}[2][]{%
-  \bigskip%
-  \ifstrequal{#1}{}{}{\marginpar{\vspace*{\dimexpr1pt-\baselineskip}\raggedright\input{#1}}}%
-  {\color{heading}\cvsectionfont\MakeUppercase{#2}}\\[-1ex]%
-  {\color{headingrule}\rule{\linewidth}{2pt}\par}\medskip
+\bigskip%
+\ifstrequal{#1}{}{}{\marginpar{\vspace*{\dimexpr1pt-\baselineskip}\raggedright\input{#1}}}%
+{\color{heading}\cvsectionfont\MakeUppercase{#2}}\\[-1ex]%
+{\color{headingrule}\rule{\linewidth}{2pt}\par}\medskip
 }
 
 \newcommand{\cvsubsection}[1]{%
@@ -304,8 +304,8 @@
   {\large\color{emphasis}#1\par}
   \smallskip\normalsize
   \ifstrequal{#2}{}{}{
-  \textbf{\color{accent}#2}\par
-  \smallskip}
+    \textbf{\color{accent}#2}\par
+    \smallskip}
   \ifstrequal{#3}{}{}{{\small\makebox[0.5\linewidth][l]{\faCalendar~#3}}}%
   \ifstrequal{#4}{}{}{{\small\makebox[0.5\linewidth][l]{\faMapMarker~#4}}}\par
   \medskip\normalsize
@@ -313,85 +313,85 @@
 
 \newcommand{\cvachievement}[3]{%
   \begin{tabularx}{\linewidth}{@{}p{2em} @{\hspace{1ex}} >{\raggedright\arraybackslash}X@{}}
-  \multirow{2}{*}{\Large\color{accent}#1} & \bfseries\textcolor{emphasis}{#2}\\
-  & #3
+    \multirow{2}{*}{\Large\color{accent}#1} & \bfseries\textcolor{emphasis}{#2} \\
+                                            & #3
   \end{tabularx}%
   \smallskip
 }
 
 \newcommand{\cvtag}[1]{%
-  \tikz[baseline]\node[anchor=base,draw=body!30,rounded corners,inner xsep=1ex,inner ysep =0.75ex,text height=1.5ex,text depth=.25ex]{#1};
+  \tikz[baseline]\node[anchor=base,draw=body!30,rounded corners,inner xsep=1ex,inner ysep =0.75ex,text height=1ex,text depth=.25ex]{\footnotesize#1};
 }
 
 \newcommand{\cvskill}[2]{%
-\textcolor{emphasis}{\textbf{#1}}\hfill
-\foreach \x in {1,...,5}{%
-  \space{\ifnumgreater{\x}{#2}{\color{body!30}}{\color{accent}}\ratingmarker}}\par%
+  \textcolor{emphasis}{\textbf{#1}}\hfill
+  \foreach \x in {1,...,5}{%
+      \space{\ifnumgreater{\x}{#2}{\color{body!30}}{\color{accent}}\ratingmarker}}\par%
 }
 
 % Adapted from @Jake's answer at http://tex.stackexchange.com/a/82729/226
 \newcommand{\wheelchart}[4][0]{%
-    \begingroup\centering
-    \def\innerradius{#3}%
-    \def\outerradius{#2}%
-    % Calculate total
-    \pgfmathsetmacro{\totalnum}{0}%
-    \foreach \value/\colour/\name in {#4} {%
-        \pgfmathparse{\value+\totalnum}%
-        \global\let\totalnum=\pgfmathresult%
+  \begingroup\centering
+  \def\innerradius{#3}%
+  \def\outerradius{#2}%
+  % Calculate total
+  \pgfmathsetmacro{\totalnum}{0}%
+  \foreach \value/\colour/\name in {#4} {%
+      \pgfmathparse{\value+\totalnum}%
+      \global\let\totalnum=\pgfmathresult%
     }%
-    \begin{tikzpicture}
+  \begin{tikzpicture}
 
-      % Calculate the thickness and the middle line of the wheel
-      \pgfmathsetmacro{\wheelwidth}{\outerradius-\innerradius}
-      \pgfmathsetmacro{\midradius}{(\outerradius+\innerradius)/2}
-      \pgfmathsetmacro{\totalrot}{-90 + #1}
+    % Calculate the thickness and the middle line of the wheel
+    \pgfmathsetmacro{\wheelwidth}{\outerradius-\innerradius}
+    \pgfmathsetmacro{\midradius}{(\outerradius+\innerradius)/2}
+    \pgfmathsetmacro{\totalrot}{-90 + #1}
 
-      % Rotate so we start from the top
-      \begin{scope}[rotate=\totalrot]
+    % Rotate so we start from the top
+    \begin{scope}[rotate=\totalrot]
 
       % Loop through each value set. \cumnum keeps track of where we are in the wheel
       \pgfmathsetmacro{\cumnum}{0}
       \foreach \value/\width/\colour/\name in {#4} {
-            \pgfmathsetmacro{\newcumnum}{\cumnum + \value/\totalnum*360}
+          \pgfmathsetmacro{\newcumnum}{\cumnum + \value/\totalnum*360}
 
-            % Calculate the percent value
-            \pgfmathsetmacro{\percentage}{\value/\totalnum*100}
-            % Calculate the mid angle of the colour segments to place the labels
-            \pgfmathsetmacro{\midangle}{-(\cumnum+\newcumnum)/2}
+          % Calculate the percent value
+          \pgfmathsetmacro{\percentage}{\value/\totalnum*100}
+          % Calculate the mid angle of the colour segments to place the labels
+          \pgfmathsetmacro{\midangle}{-(\cumnum+\newcumnum)/2}
 
-            % This is necessary for the labels to align nicely
-            \pgfmathparse{
-               (-\midangle>180?"west":"east")
-            } \edef\textanchor{\pgfmathresult}
-            \pgfmathparse{
-               (-\midangle>180?"flush left":"flush right")
-            } \edef\textalign{\pgfmathresult}
-            \pgfmathsetmacro\labelshiftdir{1-2*(-\midangle<180)}
+          % This is necessary for the labels to align nicely
+          \pgfmathparse{
+            (-\midangle>180?"west":"east")
+          } \edef\textanchor{\pgfmathresult}
+          \pgfmathparse{
+            (-\midangle>180?"flush left":"flush right")
+          } \edef\textalign{\pgfmathresult}
+          \pgfmathsetmacro\labelshiftdir{1-2*(-\midangle<180)}
 
-            % Draw the color segments. Somehow, the \midrow units got lost, so we add 'pt' at the end. Not nice...
-            \filldraw[draw=white,fill=\colour] (-\cumnum:\outerradius) arc (-\cumnum:-(\newcumnum):\outerradius) --
-            (-\newcumnum:\innerradius) arc (-\newcumnum:-(\cumnum):\innerradius) -- cycle;
+          % Draw the color segments. Somehow, the \midrow units got lost, so we add 'pt' at the end. Not nice...
+          \filldraw[draw=white,fill=\colour] (-\cumnum:\outerradius) arc (-\cumnum:-(\newcumnum):\outerradius) --
+          (-\newcumnum:\innerradius) arc (-\newcumnum:-(\cumnum):\innerradius) -- cycle;
 
-            % Draw the data labels
-            \draw  [*-,thin,emphasis] node [append after command={(\midangle:\midradius pt) -- (\midangle:\outerradius + 1ex) -- (\tikzlastnode)}] at (\midangle:\outerradius + 1ex) [xshift=\labelshiftdir*0.5cm,inner sep=1ex, outer sep=0pt, text width=\width,anchor=\textanchor,align=\textalign,font=\small,text=body]{\name};
-            % Set the old cumulated angle to the new value
-            \global\let\cumnum=\newcumnum
+          % Draw the data labels
+          \draw  [*-,thin,emphasis] node [append after command={(\midangle:\midradius pt) -- (\midangle:\outerradius + 1ex) -- (\tikzlastnode)}] at (\midangle:\outerradius + 1ex) [xshift=\labelshiftdir*0.5cm,inner sep=1ex, outer sep=0pt, text width=\width,anchor=\textanchor,align=\textalign,font=\small,text=body]{\name};
+          % Set the old cumulated angle to the new value
+          \global\let\cumnum=\newcumnum
         }
-      \end{scope}
-%      \draw[gray] (0,0) circle (\outerradius) circle (\innerradius);
-    \end{tikzpicture}\par
-    \endgroup
+    \end{scope}
+    %      \draw[gray] (0,0) circle (\outerradius) circle (\innerradius);
+  \end{tikzpicture}\par
+  \endgroup
 }
 
 \newcommand{\cvref}[3]{%
   \smallskip
   \textcolor{emphasis}{\textbf{#1}}\par
   \begin{description}[font=\color{accent},style=multiline,leftmargin=1.35em,align=left]
-  \item[\small\normalfont\emailsymbol] #2
-  \item[\small\normalfont\mailaddresssymbol] #3
+    \item[\small\normalfont\emailsymbol] #2
+    \item[\small\normalfont\mailaddresssymbol] #3
   \end{description}
-%   \medskip
+  %   \medskip
 }
 
 \newenvironment{cvcolumn}[1]{\begin{minipage}[t]{#1}\raggedright}{\end{minipage}}
@@ -409,8 +409,8 @@
 % v1.1.2: make it easier to add a sidebar aligned with top of next page
 \RequirePackage{afterpage}
 \newcommand{\addsidebar}[2][]{\marginpar{%
-  \ifstrequal{#1}{}{}{\vspace*{#1}}%
-  \input{#2}}%
+    \ifstrequal{#1}{}{}{\vspace*{#1}}%
+    \input{#2}}%
 }
 \newcommand{\addnextpagesidebar}[2][]{\afterpage{\addsidebar[#1]{#2}}}
 
