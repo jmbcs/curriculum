@@ -9,3 +9,6 @@ help: ## Show this help
 
 clean:
 	@find . -type f \( -name "*.aux" -o -name "*.bbl" -o -name "*.bcf" -o -name "*.fls"  -o -name "*.fdb_latexmk" -o -name "*.log" -o -name "*.out" -o -name "*.run.xml" -o -name "*.synctex.gz" -o -name "*.xmpi" -o -name "*.PDF" -o -name "*.BCF" -o -name "*.FLS" -o -name "*.LOG" -o -name "*.OUT" -o -name "*.RUN.XML" -o -name "*.SYNCTEX.GZ" -o -name "*.XMPI" \) -exec rm -f {} +
+
+compress_cv:
+	@ghostscript -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/default \-dNOPAUSE -dQUIET -dBATCH -sOutputFile=CV_JULIO_SILVA.pdf temp/curriculum.pdf
