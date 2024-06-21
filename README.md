@@ -5,7 +5,7 @@ This is a curriculum vitae (CV) template utilizing the [AltaCV template](https:/
 ## Getting Started
 
 1. Fork this repository.
-2. Edit the `curriculum.tex` file using your preferred LaTeX editor.
+2. Edit the `curriculum.tex` using your preferred LaTeX editor.
 3. Customize the sections, details, and formatting as needed.
 
 ## Features
