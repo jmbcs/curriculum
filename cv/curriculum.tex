@@ -1,0 +1,60 @@
+\documentclass[10pt,a4paper,ragged2e,withhyper]{altacv}
+
+% Change the page layout if you need to
+\geometry{left=1.25cm,right=1.25cm,top=1.5cm,bottom=1.5cm,columnsep=1.2cm}
+
+\usepackage{paracol}
+\usepackage{hyperref}
+\usepackage{cv_customizations}
+
+% Load configuration with personal information
+\input{config}
+
+\begin{document}
+
+\name{\cvname}
+\tagline{\cvtagline}
+
+%% You can add multiple photos on the left or right
+\photoR{3.5cm}{\cvphoto}
+
+\personalinfo{%
+    \email{\cvemail} \location{\cvlocation} \\
+    \linkedin{\cvlinkedin} \github{\cvgithub} \\
+    \homepage{\cvhomepage}
+}
+
+\makecvheader
+
+\AtBeginEnvironment{itemize}{\small}
+
+\columnratio{0.75}
+
+\begin{paracol}{2}
+
+% Work Experience section
+\input{sections/experience}
+
+\switchcolumn
+
+% Skills section
+\input{sections/skills}
+
+\end{paracol}
+
+% Education section (full width)
+\input{sections/education}
+
+\begin{paracol}{2}
+
+% Links section
+\input{sections/links}
+
+\switchcolumn
+
+% Languages section
+\input{sections/languages}
+
+\end{paracol}
+
+\end{document}
