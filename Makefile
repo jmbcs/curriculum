@@ -24,10 +24,3 @@ build: ## Build a PDF with good image quality and clean up temporary files
 	@find $(OUTPUT_DIR) -type f \( -name "*.aux" -o -name "*.log" -o -name "*.out" -o -name "*.xmpi" -o -name "*.run.xml" -o -name "*.bcf" -o -name "*.synctex.gz" \) -exec rm -f {} \;
 	@rm -f $(TEMP_PDF)
 	@echo "Build complete: $(OUTPUT_PDF)"
-
-watch: ## Watch for changes and rebuild (requires inotifywait)
-	@echo "Watching for changes (Ctrl+C to stop)..."
-	@while true; do \
-		find cv -type f -name "*.tex" -o -name "*.sty" | inotifywait -e modify -q --fromfile -; \
-		$(MAKE) build; \
-	done
