@@ -1,14 +1,33 @@
+.PHONY: help build watch
 
-.PHONY: help
 SHELL := /bin/bash
-current_branch := $(shell git rev-parse --abbrev-ref HEAD)
+LATEX_FILE := curriculum.tex
+OUTPUT_DIR := output
+TEMP_PDF := $(OUTPUT_DIR)/$(LATEX_FILE:.tex=.pdf)
+OUTPUT_PDF := $(OUTPUT_DIR)/CV_JULIO_SILVA.pdf
+GS := gs
 
 help: ## Show this help
 	@echo -e "\033[33mCommands\033[0m"
-	@awk -F ':.*?## ' '/^[a-zA-Z0-9_-.]+:.*?##/ {printf "\033[36m- %-30s\033[0m| %s\n", $$1, $$2}' $(MAKEFILE_LIST)
+	@awk -F ':.*?## ' '/^[-a-zA-Z0-9_.]+:.*?##/ {printf "\033[36m- %-30s\033[0m| %s\n", $$1, $$2}' $(MAKEFILE_LIST)
 
-clean:
-	@find . -type f \( -name "*.aux" -o -name "*.bbl" -o -name "*.bcf" -o -name "*.fls"  -o -name "*.fdb_latexmk" -o -name "*.log" -o -name "*.out" -o -name "*.run.xml" -o -name "*.synctex.gz" -o -name "*.xmpi" -o -name "*.PDF" -o -name "*.BCF" -o -name "*.FLS" -o -name "*.LOG" -o -name "*.OUT" -o -name "*.RUN.XML" -o -name "*.SYNCTEX.GZ" -o -name "*.XMPI" \) -exec rm -f {} +
+build: ## Build a PDF with good image quality and clean up temporary files
+	@mkdir -p $(OUTPUT_DIR)
+	@echo "Building CV..."
+	@cd cv && pdflatex -halt-on-error -output-directory=../$(OUTPUT_DIR) $(LATEX_FILE)
+	@echo "Creating final PDF with preserved image quality..."
+	@$(GS) -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 \
+		-dPDFSETTINGS=/prepress \
+		-dNOPAUSE -dQUIET -dBATCH \
+		-sOutputFile=$(OUTPUT_PDF) $(TEMP_PDF)
+	@echo "Cleaning up temporary files..."
+	@find $(OUTPUT_DIR) -type f \( -name "*.aux" -o -name "*.log" -o -name "*.out" -o -name "*.xmpi" -o -name "*.run.xml" -o -name "*.bcf" -o -name "*.synctex.gz" \) -exec rm -f {} \;
+	@rm -f $(TEMP_PDF)
+	@echo "Build complete: $(OUTPUT_PDF)"
 
-compress_cv:
-	@ghostscript -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/default \-dNOPAUSE -dQUIET -dBATCH -sOutputFile=CV_JULIO_SILVA.pdf temp/curriculum.pdf
+watch: ## Watch for changes and rebuild (requires inotifywait)
+	@echo "Watching for changes (Ctrl+C to stop)..."
+	@while true; do \
+		find cv -type f -name "*.tex" -o -name "*.sty" | inotifywait -e modify -q --fromfile -; \
+		$(MAKE) build; \
+	done

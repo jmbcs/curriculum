@@ -1,0 +1,49 @@
+% Change the font if you want to, depending on whether
+% you're using pdflatex or xelatex/lualatex
+\ifxetexorluatex
+    % If using xelatex or lualatex:
+    \setmainfont{Roboto Slab}
+    \setsansfont{Lato}
+    \renewcommand{\familydefault}{\sfdefault}
+\else
+    % If using pdflatex:
+    \usepackage[rm]{roboto}
+    \usepackage[defaultsans]{lato}
+    \renewcommand{\familydefault}{\sfdefault}
+\fi
+
+% Define a professional color palette
+\definecolor{NavyBlue}{HTML}{1A1A2E}      % Dark blue for name
+\definecolor{SlateGray}{HTML}{2E4053}     % Body and section text
+\definecolor{SteelGray}{HTML}{566573}     % Emphasis/secondary text
+\definecolor{AccentBlue}{HTML}{1F6693}    % Darker blue for section lines and accents
+\definecolor{LightGray}{HTML}{A9B1B7}     % Slightly darker for subtle text elements
+
+% Assign colors to CV roles
+\colorlet{name}{NavyBlue}
+\colorlet{tagline}{AccentBlue}
+\colorlet{heading}{SlateGray}
+\colorlet{headingrule}{AccentBlue}
+\colorlet{subheading}{AccentBlue}
+\colorlet{accent}{AccentBlue}
+\colorlet{emphasis}{SteelGray}
+\colorlet{body}{SlateGray}
+
+% Change some fonts, if necessary
+\renewcommand{\namefont}{\huge\rmfamily\bfseries}
+\renewcommand{\personalinfofont}{\footnotesize}
+\renewcommand{\cvsectionfont}{\Large\rmfamily\bfseries\color{NavyBlue}}
+\renewcommand{\cvsubsectionfont}{\large\bfseries}
+
+% Customize the section header style
+\renewcommand{\cvsection}[1]{%
+    \vspace{1em}
+    {\cvsectionfont\textbf{#1}}%
+    \vspace{0.1em}
+    \par\noindent{\color{headingrule}\rule{\columnwidth}{2pt}}\par
+    \vspace{0.25em}
+}
+
+% Customize bullet and skill rating styles
+\renewcommand{\itemmarker}{{\normalsize\textbullet}}
+\renewcommand{\ratingmarker}{\faCircle}
