@@ -4,7 +4,7 @@ SHELL := /bin/bash
 LATEX_FILE := curriculum.tex
 OUTPUT_DIR := output
 TEMP_PDF := $(OUTPUT_DIR)/$(LATEX_FILE:.tex=.pdf)
-OUTPUT_PDF := $(OUTPUT_DIR)/curriculum_final.pdf
+OUTPUT_PDF := $(OUTPUT_DIR)/CV_JULIO_SILVA.pdf
 GS := gs
 
 help: ## Show this help
