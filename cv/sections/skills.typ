@@ -4,7 +4,7 @@
 #let skills = [
   #cv-section("Tech Skills")
 
-  #skill-cat("Programming", (("Python", true), "Go", ("SQL", true)))
+  #skill-cat("Programming", (("Python", true), ("SQL", true), "JavaScript", "React", "HTML"))
   #skill-cat("Frameworks", (("Django", true), ("FastAPI", true), "SQLAlchemy", "Pandas"))
   #skill-cat("APIs & Messaging", ("REST", "gRPC", "RabbitMQ", "Protocol Buffers"))
   #skill-cat("Databases", (("PostgreSQL", true), ("Redis", true), "VictoriaMetrics"))
