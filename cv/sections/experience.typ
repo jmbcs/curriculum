@@ -10,12 +10,16 @@
     "Remote",
   )
   - Built and maintained live channel integrations with *Booking.com*, *Airbnb*, and *Vrbo* — real-time sync of availability, rates, and reservations for thousands of short-term rental properties.
-  - Delivered promotions features connecting GuestReady to Airbnb, Vrbo, and Booking.com, enabling dynamic discount campaigns across OTA channels.
+  - Designed and maintained clean *REST API* contracts between internal services and external OTA channels.
+  - Delivered promotions features enabling dynamic discount campaigns across OTA channels.
   - Built a *Redis* hash-based deduplication layer that prevents reprocessing of stale events in the channel pipeline.
+  - Built asynchronous processing flows over *RabbitMQ* to handle multi-channel distribution at scale.
   - Ran zero-downtime bulk operations on large *PostgreSQL* tables in production.
+  - Profiled and optimized database queries to keep the channel pipeline performant under load.
   - Implemented *New Relic* monitoring alarms for proactive observability; triaged production incidents with *Sentry* and *Datadog*.
   - Worked across a large *Django* PMS codebase, investigating and resolving production bugs reported by users and support.
   - Maintained engineering quality through *code review* on a distributed 40+ engineer team; used AI tooling (*Claude Code*, *Cursor*) to ship faster.
+  - Made occasional frontend contributions alongside primary backend work.
 
   #v(0.34em)
   #cv-divider

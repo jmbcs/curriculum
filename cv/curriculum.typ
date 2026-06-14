@@ -82,16 +82,16 @@
   columns: (1fr, 6cm),
   column-gutter: 1.3em,
 
-  // Left — experience, education, links
+  // Left — experience + education
   [
     #experience
     #education
-    #links
   ],
 
-  // Right — skills + languages
+  // Right — skills + languages + links
   [
     #skills
     #languages
+    #links
   ],
 )
