@@ -13,7 +13,7 @@
   - Designed and maintained clean *REST API* contracts between internal services and external OTA channels.
   - Delivered promotions features enabling dynamic discount campaigns across OTA channels.
   - Built a *Redis* hash-based deduplication layer that prevents reprocessing of stale events in the channel pipeline.
-  - Built asynchronous processing flows over *RabbitMQ* to handle multi-channel distribution at scale.
+  - Built asynchronous and scheduled processing with *RabbitMQ* and *Celery* — including recurring jobs such as activating promotions when a property goes live.
   - Ran zero-downtime bulk operations on large *PostgreSQL* tables in production.
   - Profiled and optimized database queries to keep the channel pipeline performant under load.
   - Implemented *New Relic* monitoring alarms for proactive observability; triaged production incidents with *Sentry* and *Datadog*.

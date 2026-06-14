@@ -6,9 +6,9 @@
 
   #skill-cat("Programming", (("Python", true), ("SQL", true), "JavaScript", "React", "HTML"))
   #skill-cat("Frameworks", (("Django", true), ("FastAPI", true), "SQLAlchemy", "Pandas"))
-  #skill-cat("APIs & Messaging", ("REST", "gRPC", "RabbitMQ", "Protocol Buffers"))
+  #skill-cat("APIs & Messaging", ("REST", "gRPC", "RabbitMQ", "Celery", "Protocol Buffers"))
   #skill-cat("Databases", (("PostgreSQL", true), ("Redis", true), "VictoriaMetrics"))
-  #skill-cat("Infrastructure", (("Docker", true), ("Linux", true), "AWS"))
+  #skill-cat("Infrastructure", (("Docker", true), ("Linux", true), "AWS", "Qovery"))
   #skill-cat("Observability", ("Grafana", ("Sentry", true), "Datadog", ("New Relic", true), "Telegraf"))
   #skill-cat("Tooling", (("Git", true), "Bash", "Make", "YAML"))
   #skill-cat("AI Tooling", (("Claude Code", true), "Cursor"))
