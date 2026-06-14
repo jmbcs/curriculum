@@ -1,26 +1,34 @@
-.PHONY: help build watch
+.PHONY: help build
 
-SHELL := /bin/bash
-LATEX_FILE := curriculum.tex
+SHELL      := /bin/bash
+TYP_FILE   := curriculum.typ
 OUTPUT_DIR := output
-TEMP_PDF := $(OUTPUT_DIR)/$(LATEX_FILE:.tex=.pdf)
+TEMP_PDF   := $(OUTPUT_DIR)/curriculum.pdf
 OUTPUT_PDF := $(OUTPUT_DIR)/CV_JULIO_SILVA.pdf
-GS := gs
+GS         := gs
+TYPST_IMG  := ghcr.io/typst/typst:latest
 
 help: ## Show this help
 	@echo -e "\033[33mCommands\033[0m"
 	@awk -F ':.*?## ' '/^[-a-zA-Z0-9_.]+:.*?##/ {printf "\033[36m- %-30s\033[0m| %s\n", $$1, $$2}' $(MAKEFILE_LIST)
 
-build: ## Build a PDF with good image quality and clean up temporary files
+build: ## Compile CV via Typst (Docker); compress with Ghostscript if available
 	@mkdir -p $(OUTPUT_DIR)
-	@echo "Building CV..."
-	@cd cv && pdflatex -halt-on-error -output-directory=../$(OUTPUT_DIR) $(LATEX_FILE)
-	@echo "Creating final PDF with preserved image quality..."
-	@$(GS) -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 \
-		-dPDFSETTINGS=/prepress \
-		-dNOPAUSE -dQUIET -dBATCH \
-		-sOutputFile=$(OUTPUT_PDF) $(TEMP_PDF)
-	@echo "Cleaning up temporary files..."
-	@find $(OUTPUT_DIR) -type f \( -name "*.aux" -o -name "*.log" -o -name "*.out" -o -name "*.xmpi" -o -name "*.run.xml" -o -name "*.bcf" -o -name "*.synctex.gz" \) -exec rm -f {} \;
-	@rm -f $(TEMP_PDF)
-	@echo "Build complete: $(OUTPUT_PDF)"
+	@echo "Compiling CV..."
+	@docker run --rm \
+		-u "$$(id -u):$$(id -g)" \
+		-v "$(CURDIR)/cv":/cv:ro \
+		-v "$(CURDIR)/$(OUTPUT_DIR)":/output \
+		$(TYPST_IMG) \
+		compile --font-path /cv/fonts /cv/$(TYP_FILE) /output/curriculum.pdf
+	@if command -v $(GS) > /dev/null 2>&1; then \
+		echo "Compressing output..."; \
+		$(GS) -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 \
+			-dPDFSETTINGS=/prepress \
+			-dNOPAUSE -dQUIET -dBATCH \
+			-sOutputFile=$(OUTPUT_PDF) $(TEMP_PDF); \
+		rm -f $(TEMP_PDF); \
+	else \
+		mv $(TEMP_PDF) $(OUTPUT_PDF); \
+	fi
+	@echo "Done: $(OUTPUT_PDF)"
