@@ -19,6 +19,7 @@
   - Implemented *New Relic* monitoring alarms for proactive observability; triaged production incidents with *Sentry* and *Datadog*.
   - Worked across a large *Django* PMS codebase, investigating and resolving production bugs reported by users and support.
   - Maintained engineering quality through *code review* on a distributed 40+ engineer team; used AI tooling (*Claude Code*, *Cursor*) to ship faster.
+  - Mentored junior developers, sharing backend best practices through code review and pairing.
   - Delivered frontend work alongside backend, including a full revamp of the Amenities page.
 
   #v(0.34em)
